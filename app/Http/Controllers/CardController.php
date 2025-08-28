@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class CardController extends Controller
 {
-    public function index()
-    {
-        return view('card-form');
-    }
 
     public function generate(Request $request)
     {
