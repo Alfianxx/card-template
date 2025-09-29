@@ -55,7 +55,8 @@ class CardController extends Controller
         });
 
         // Pastikan folder ada
-        Storage::makeDirectory('public/cards');
+        Storage::disk('public')->makeDirectory('cards');
+
 
         // Nama file unik
         $fileName = 'kartu-' . Str::random(8) . '.png';
