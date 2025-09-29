@@ -17,31 +17,39 @@ class CardController extends Controller
         $nama = $request->nama;
         $jabatan = $request->jabatan;
         $nip = $request->nip;
+        $pangkat = $request->pangkat;
 
         $manager = new ImageManager(new Driver());
 
         $img = $manager->read(public_path('template.png'));
 
         // Tambah Jabatan
-        $img->text("JABATAN : {$jabatan}", 120, 340, function ($font) {
-            $font->filename(public_path('fonts/arial.ttf'));
-            $font->size(20);
+        $img->text("{$jabatan}", 140, 350, function ($font) {
+            $font->filename(public_path('fonts/arialbold.ttf'));
+            $font->size(28);
             $font->color('#000000');
             $font->align('left');
         });
 
         // Tambah Nama
-        $img->text("NAMA      : {$nama}", 120, 360, function ($font) {
+        $img->text("{$nama}", 140, 380, function ($font) {
             $font->filename(public_path('fonts/arial.ttf'));
-            $font->size(20);
+            $font->size(26);
             $font->color('#000000');
             $font->align('left');
         });
 
         // Tambah NIP
-        $img->text("NIP          : {$nip}", 120, 380, function ($font) {
+        $img->text("NIP: {$nip}", 140, 410, function ($font) {
             $font->filename(public_path('fonts/arial.ttf'));
-            $font->size(20);
+            $font->size(26);
+            $font->color('#000000');
+            $font->align('left');
+        });
+
+        $img->text("{$pangkat}", 140, 440, function ($font) {
+            $font->filename(public_path('fonts/arial.ttf'));
+            $font->size(26);
             $font->color('#000000');
             $font->align('left');
         });
